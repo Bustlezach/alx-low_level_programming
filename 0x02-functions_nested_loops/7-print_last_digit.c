@@ -8,19 +8,11 @@
 
 int print_last_digit(int v)
 {
-	int last;
+	int last = v % 10;
 
-	if (v >= 10)
+	if (v < 0)
 	{
-		last = v % 10;
-	}
-	else if (v < 0)
-	{
-		last = v * -1;
-	}
-	else
-	{
-		last = v;
+		last = last * -1;
 	}
 	_putchar(last);
 	return (last);
