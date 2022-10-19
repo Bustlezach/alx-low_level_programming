@@ -2,7 +2,7 @@
 
 /**
  * _isalpha - check to confirm if its a letter
- *
+ *@c: parameter
  * Return: 1 or 0
  */
 
