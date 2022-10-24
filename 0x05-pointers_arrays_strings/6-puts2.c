@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * puts - print every character of a string
+ * puts2 - print every character of a string
  * @str: pointer value
  * Return: always 0
  */
