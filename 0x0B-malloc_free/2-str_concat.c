@@ -15,45 +15,32 @@
 
 char *str_concat(char *s1, char *s2)
 {
+	unsigned int s1_length = 0;
+	unsigned int s2_length = 0;
 	char *alloc_mem;
-	int s1_len, s2_len;
-	unsigned int i;
-	unsigned int j;
-
+	unsigned int i, j;
 
 	if (s1 == NULL)
-	{
-		return ('\n');
-	}
+		s1 = "";
 
 	if (s2 == NULL)
-	{
-		return ('\n');
-	}
+		s2 = "";
 
+	while (*(s1 + s1_length) != '\0')
+		s1_length++;
 
-	for (s1_len = 0; s1[s1_len] != '\0'; s1_len++)
-	{
-		s1_len;
-	}
+	while (*(s2 + s2_length) != '\0')
+		s2_length++;
 
-	for (s2_len = 0; s2[s2_len] != '\0'; s2_len++)
-	{
-		s2_len;
-	}
+	alloc_mem = malloc(1 + (s1_length * sizeof(*s1)) + (s2_length * sizeof(*s2)));
+	if (alloc_mem == NULL)
+		return ('\0');
 
-	alloc_mem = malloc((s1_len * sizeof(char)) + (s2_len * sizeof(char)));
+	for (i = 0; i < s1_length; i++)
+		alloc_mem[i] = *(s1 + i);
 
-	for (i = 0; s1[i] != '\0'; i++)
-	{
-		alloc_mem[i] = s1[i];
-	}
-	for (j = 0; s2[j] != '\0'; j++, i++)
-	{
-		alloc_mem[i] = s2[j];
-	}
-
-	alloc_mem[i] = '\0';
+	for (j = 0; j < s2_length; j++, i++)
+		alloc_mem[i] = *(s2 + j);
 
 	return (alloc_mem);
 }

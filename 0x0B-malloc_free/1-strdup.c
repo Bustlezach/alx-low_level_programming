@@ -13,32 +13,27 @@
 
 char *_strdup(char *str)
 {
-	int i, j;
 	char *alloc_mem;
+	unsigned int i;
+	unsigned int length_of_string = 0;
 
 	if (str == NULL)
-	{
 		return ('\0');
-	}
 
+	while (*(str + length_of_string) != '\0')
+		length_of_string++;
 
-	for (i = 0; str[i] != '\0'; i++)
+	length_of_string++;
 
-
-	alloc_mem = malloc(i * sizeof(char));
+	alloc_mem = malloc(sizeof(*str) * length_of_string);
 
 	if (alloc_mem == NULL)
-	{
 		return ('\0');
-	}
 
-	for (j = 0; j < i; j++)
-	{
-		alloc_mem[i] = str[i];
-	}
+	for (i = 0; i < length_of_string; i++)
+		alloc_mem[i] = *(str + i);
 
 	alloc_mem[i] = '\0';
 
 	return (alloc_mem);
-
 }
