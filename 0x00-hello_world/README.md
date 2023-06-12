@@ -1,1 +1,1 @@
-My first set of C programming language task
+The very beginning of my C programming language journey.
